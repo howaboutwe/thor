@@ -38,6 +38,11 @@ exports.binary = function binary(size, fn) {
   fn(undefined, cached);
 };
 
+exports.custom_url = function custom_url(original_url) {
+  return original_url;
+};
+
+
 //
 // The following is not needed to create a session file. We don't want to
 // re-create & re-allocate memory every time we receive a message so we cache

@@ -38,9 +38,10 @@ process.on('message', function message(task) {
   }
 
   // End of the line, we are gonna start generating new connections.
-  if (!task.url) return;
+  var url = session['custom_url'](task.url);
+  if (!url) return;
 
-  var socket = new Socket(task.url, {
+  var socket = new Socket(url, {
     protocolVersion: protocol
   });
 
