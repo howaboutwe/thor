@@ -44,7 +44,7 @@ exports.binary = function binary(size, fn) {
  * @param {String} original_url The original connection URL specified by the user.
  * @public
  */
-exports.custom_url = function custom_url(original_url) {
+exports.custom_url = function custom_url(original_url, task_id) {
   return original_url;
 };
 
