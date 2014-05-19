@@ -38,7 +38,8 @@ process.on('message', function message(task) {
   }
 
   // End of the line, we are gonna start generating new connections.
-  var url = session['custom_url'](task.url, task.id);
+  var task_id = task.id.split("::")[1];
+  var url = session['custom_url'](task.url, task_id);
   if (!url) return;
 
   var socket = new Socket(url, {
