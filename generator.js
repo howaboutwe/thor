@@ -38,6 +38,12 @@ exports.binary = function binary(size, fn) {
   fn(undefined, cached);
 };
 
+/**
+ * Generate a custom URL for the websocket connection. Returns the new URL to use.
+ *
+ * @param {String} original_url The original connection URL specified by the user.
+ * @public
+ */
 exports.custom_url = function custom_url(original_url) {
   return original_url;
 };
