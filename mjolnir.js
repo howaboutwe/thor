@@ -102,7 +102,8 @@ process.on('message', function message(task) {
  * @api private
  */
 function write(socket, task, id, fn) {
-  session[binary ? 'binary' : 'utf8'](id, task.size, function message(err, data) {
+  var task_id = id.split("::")[1];
+  session[binary ? 'binary' : 'utf8'](task_id, task.size, function message(err, data) {
     var start = socket.last = Date.now();
 
     socket.send(data, {
