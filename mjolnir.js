@@ -43,7 +43,8 @@ process.on('message', function message(task) {
   if (!url) return;
 
   var socket = new Socket(url, {
-    protocolVersion: protocol
+    protocolVersion: protocol,
+    rejectUnauthorized: false
   });
 
   socket.on('open', function open() {
